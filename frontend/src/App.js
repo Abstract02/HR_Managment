@@ -2,6 +2,7 @@ import './App.css';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import Admin from './components/Admin';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -10,6 +11,8 @@ import {
 } from 'react-router-dom';
 
 function App() {
+
+
   return (
     <div className="App">
      <Router>
