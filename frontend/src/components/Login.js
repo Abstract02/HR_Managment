@@ -19,8 +19,7 @@ function Login() {
                         <input type="text" placeholder="Enter your password" name="password"  className="m-4 rounded-md p-3"></input>
                         <div className="flex flex-col">
                             <button type="submit"  className="m-4 text-2xl text-white bg-slate-800 p-2 rounded-md hover:bg-zinc-700 hover:text-black">LOGIN</button>
-                            <h2 className="m-auto">-----------------------OR-----------------------</h2>
-                            <button type="submit"  className="m-4 text-2xl text-white bg-slate-800 p-2 rounded-lg  hover:bg-zinc-700 hover:text-black">REGISTER</button>
+                           
 
                         </div>
                     </div>
