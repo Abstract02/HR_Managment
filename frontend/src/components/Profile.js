@@ -2,8 +2,10 @@ import React from 'react'
 import { useParams } from "react-router-dom"
 import axios from "axios"
 import {useEffect,useState} from "react"
+import { useNavigate } from 'react-router-dom';
 
   function Profile() {
+    let navigate = useNavigate();
 
     const { id } = useParams();
     const [user, setuser] = useState({
@@ -14,7 +16,7 @@ import {useEffect,useState} from "react"
       status: "active"
       })
     useEffect(() => {
-      axios.get("https://gorest.co.in/public/v2/users")
+      axios.get("https://gorest.co.in/public/v2/users?access-token=286dd3e0fca27a70bf293eabdf125e81571bf002570a32a894e7b9092421a390")
       .then(res => {
         
           const usr = res.data.filter((person)=> {
@@ -24,6 +26,10 @@ import {useEffect,useState} from "react"
           setuser(usr[0])
       }).catch(err => console.log(err))
     }, [])
+
+    const logout = () =>{
+        navigate("/")
+    }
     
 
     return (
@@ -66,6 +72,9 @@ import {useEffect,useState} from "react"
                       <p className='font-light m-2 text-lg bg-slate-300 w-max rounded-md pr-1 pl-1' > {user.status} </p>
                     </div>
                   </div>
+                    <div className='flex justify-end'>
+                                    <button className='m-4 text-2xl text-white bg-slate-800 pr-2 pl-2 pb-1 rounded-lg mt-20 mr-64  hover:bg-zinc-700 hover:text-black' onClick={logout} >Logout</button>
+                    </div>
                 </div>
               </div>
             </div>

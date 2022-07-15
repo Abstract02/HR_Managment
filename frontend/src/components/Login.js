@@ -30,7 +30,7 @@ function Login() {
             }
             else if(email && password)
             {
-            axios.get("https://gorest.co.in/public/v2/users")
+            axios.get("https://gorest.co.in/public/v2/users?access-token=286dd3e0fca27a70bf293eabdf125e81571bf002570a32a894e7b9092421a390")
                 .then(res => {
                     
                     const usr = res.data.filter((user)=> {
