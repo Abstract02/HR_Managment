@@ -14,7 +14,7 @@ function Admin() {
             </div>
             <div className=' w-2/3 m-10 '>
               <div >
-                <p className='font-serif text-4xl'>FILL EMPLOYEE DETAILS</p>
+                <p className='font-serif text-4xl'>ADD EMPLOYEE </p>
                 <hr />
                 <div className='details flex-col m-5 '>
                   <div>

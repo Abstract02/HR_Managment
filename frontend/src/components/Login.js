@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { navigate, useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 function Login() {
     let navigate = useNavigate();
@@ -19,9 +20,33 @@ function Login() {
     }
 
     const Logi = () => {
-        if(user.email === "admin" && user.password === "admin")
-        {
+        
+        const { email, password } = user;
+        
+        if (email && password) {
+            if(email === "admin" && password === "admin")
+            {
             navigate("/admin")
+            }
+            else if(email && password)
+            {
+            axios.get("https://gorest.co.in/public/v2/users")
+                .then(res => {
+                    
+                    const usr = res.data.filter((user)=> {
+                        return (user.email === email)
+                    })
+                    if(usr[0]){
+                    navigate("/profile/"+usr[0].id)
+                    }
+                    else{
+                        alert("Email not registered")
+                    }
+                }).catch(err => console.log(err))
+        }
+    }
+        else {
+            alert("Enter Valid Email and Password");
         }
     }
 
