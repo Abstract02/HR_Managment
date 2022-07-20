@@ -35,8 +35,8 @@ import { useNavigate } from 'react-router-dom';
     return (
       <>
         <div className="bg-gray-800 h-screen flex flex-col ">
-          <h1 className='font-serif text-5xl m-5 p-3 bg-zinc-400 rounded-lg '>PROFILE PAGE</h1>
-          <div className='h-5/6 bg-slate-400 m-5 rounded-lg flex'>
+          <h1 className='font-serif text-center text-5xl m-5 p-3 bg-zinc-500 rounded-lg '>PROFILE PAGE</h1>
+          <div className='h-5/6 bg-zinc-400 m-5 rounded-lg flex'>
             <div className='w-1/3 flex flex-col'>
               <img className='p-20 rounded-full ' src='https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'></img>
               <div className='flex'>
